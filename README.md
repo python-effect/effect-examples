@@ -17,11 +17,10 @@ using common HTTP client libraries:
 [treq](https://warehouse.python.org/project/treq/).
 
 treq is a Twisted-based library, showing that Effect can be used (along the
-additional `txeffect`_ package) to write generic code that can use either
-Twisted-based asynchronous IO or normal blocking IO. Other asynchronous
-frameworks (such as Python 3's ``asyncio``) could also be used in this way.
-
-.. _`txeffect`: https://github.com/python-effect/txeffect
+additional [txeffect](https://github.com/python-effect/txeffect) package) to
+write generic code that can use either Twisted-based asynchronous IO or normal
+blocking IO. Other asynchronous frameworks (such as Python 3's ``asyncio``)
+could also be used in this way.
 
 ## readline_intent
 
