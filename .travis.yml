@@ -1,0 +1,21 @@
+sudo: false
+
+language: python
+python:
+    - "2.7"
+    - "2.6"
+    - "3.4"
+    - "pypy"
+install:
+    - pip install -r requirements.txt
+script:
+    - py.test
+
+notifications:
+  irc:
+    channels:
+    - "chat.freenode.net#python-effect"
+    skip_join: true
+    use_notice: true
+    template:
+      - "%{repository} %{branch} %{commit} by %{author}: %{message}  %{build_url}"
