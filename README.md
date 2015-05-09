@@ -11,12 +11,12 @@ requirements.txt``.
 
 ## http
 
-The `http` directory contains a very simple `HTTPRequest` intent and performers
-using common HTTP client libraries:
+The [`http`](http) directory contains a very simple `HTTPRequest` intent and
+performers using common HTTP client libraries:
 [requests](http://warehouse.python.org/project/requests/) and
 [treq](https://warehouse.python.org/project/treq/).
 
-treq is a Twisted-based library, showing that Effect can be used (along the
+treq is a Twisted-based library, showing that Effect can be used (with the
 additional [txeffect](https://github.com/python-effect/txeffect) package) to
 write generic code that can use either Twisted-based asynchronous IO or normal
 blocking IO. Other asynchronous frameworks (such as Python 3's ``asyncio``)
@@ -24,14 +24,17 @@ could also be used in this way.
 
 ## readline_intent
 
-The `readline_intent.py` file has a simple `ReadLine` intent that uses
-`raw_input` (or `input` in Py3) to prompt the user for input.
+The [`readline_intent.py`](readline_intent.py) file has a simple `ReadLine`
+intent that uses `raw_input` (or `input` in Py3) to prompt the user for input.
 
 ## github
 
 The `github` directory contains a simple application that lets the user input a
 GitHub username and prints out a list of all repositories that that user has
 access to. It depends on the `http` and `readline_intent` modules.
+
+Note that if you run this example too rapidly, GitHub might temporarily block
+your IP from making anonymous API requests for some short period of time.
 
 There are two entrypoints into the example:
 [`github.sync_main`](github/sync_main.py) and
