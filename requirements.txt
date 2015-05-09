@@ -1,0 +1,5 @@
+effect==0.1a17
+txeffect
+requests
+treq
+testtools
