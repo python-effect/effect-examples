@@ -1,4 +1,4 @@
-effect==0.1a17
+effect
 txeffect
 requests
 treq

@@ -9,9 +9,9 @@ This package isn't meant to be installed, but rather just copied to your local
 dev environment and tinkered with. To install dependencies use ``pip install -r
 requirements.txt``.
 
-## http
+## ehttp
 
-The [`http`](http) directory contains a very simple `HTTPRequest` intent and
+The [`ehttp`](ehttp) directory contains a very simple `HTTPRequest` intent and
 performers using common HTTP client libraries:
 [requests](http://warehouse.python.org/project/requests/) and
 [treq](https://warehouse.python.org/project/treq/).
@@ -31,7 +31,7 @@ intent that uses `raw_input` (or `input` in Py3) to prompt the user for input.
 
 The `github` directory contains a simple application that lets the user input a
 GitHub username and prints out a list of all repositories that that user has
-access to. It depends on the `http` and `readline_intent` modules.
+access to. It depends on the `ehttp` and `readline_intent` modules.
 
 Note that if you run this example too rapidly, GitHub might temporarily block
 your IP from making anonymous API requests for some short period of time.

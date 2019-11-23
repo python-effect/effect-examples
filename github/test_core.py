@@ -1,5 +1,4 @@
-# Run these tests with "trial examples.github.test_core"
-# or "python -m testtools.run examples.github.test_core"
+# Run these tests with "pytest github/test_core.py"
 
 import json
 
