@@ -8,7 +8,10 @@ python:
     - "pypy3"
 install:
     - pip install -r requirements.txt
+    # black isn't installing on pypy3, so just skip it
+    - 'if [ "$TRAVIS_PYTHON_VERSION" != "pypy3" ]; then pip install black; fi'
 script:
+    - 'if [ "$TRAVIS_PYTHON_VERSION" != "pypy3" ]; then black --check .; fi'
     - pytest
 
 notifications:
