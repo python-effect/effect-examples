@@ -14,8 +14,9 @@ def perform_readline_stdin(dispatcher, readline):
     return input(readline.prompt)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from effect import Effect, TypeDispatcher, sync_perform
+
     # Effect-using code:
     effect = Effect(ReadLine("Tell me your name: ")).on(
         success=lambda name: "Hello, {}!".format(name)

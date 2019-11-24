@@ -11,4 +11,8 @@ class HTTPRequest(object):
 
     def __repr__(self):
         return "HTTPRequest(%r, %r, headers=%r, data=%r)" % (
-            self.method, self.url, self.headers, self.data)
+            self.method,
+            self.url,
+            self.headers,
+            self.data,
+        )

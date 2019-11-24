@@ -27,9 +27,9 @@ def get_orgs(name):
     organizations.
     """
     req = Effect(
-        HTTPRequest("get",
-                    "https://api.github.com/users/{0}/orgs".format(name)))
-    return req.on(success=lambda x: [org['login'] for org in json.loads(x)])
+        HTTPRequest("get", "https://api.github.com/users/{0}/orgs".format(name))
+    )
+    return req.on(success=lambda x: [org["login"] for org in json.loads(x)])
 
 
 def get_org_repos(name):
@@ -39,9 +39,9 @@ def get_org_repos(name):
     :return: An Effect resulting in a list of strings naming the repositories.
     """
     req = Effect(
-        HTTPRequest("get",
-                    "https://api.github.com/orgs/{0}/repos".format(name)))
-    return req.on(success=lambda x: [repo['name'] for repo in json.loads(x)])
+        HTTPRequest("get", "https://api.github.com/orgs/{0}/repos".format(name))
+    )
+    return req.on(success=lambda x: [repo["name"] for repo in json.loads(x)])
 
 
 def get_orgs_repos(name):

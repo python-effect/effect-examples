@@ -23,9 +23,7 @@ from __future__ import print_function
 from twisted.internet.task import react
 
 from txeffect import make_twisted_dispatcher, perform
-from effect import (
-    ComposedDispatcher,
-    TypeDispatcher)
+from effect import ComposedDispatcher, TypeDispatcher
 
 from ehttp.http_intent import HTTPRequest
 from ehttp.twisted_http import perform_request_with_treq
@@ -41,13 +39,17 @@ def get_dispatcher(reactor):
     :func:`make_twisted_dispatcher` is able to provide the ``ParallelEffects``
     performer, so we compose it with our own custom :obj:`TypeDispatcher`.
     """
-    return ComposedDispatcher([
-        TypeDispatcher({
-            ReadLine: perform_readline_stdin,
-            HTTPRequest: perform_request_with_treq,
-        }),
-        make_twisted_dispatcher(reactor),
-    ])
+    return ComposedDispatcher(
+        [
+            TypeDispatcher(
+                {
+                    ReadLine: perform_readline_stdin,
+                    HTTPRequest: perform_request_with_treq,
+                }
+            ),
+            make_twisted_dispatcher(reactor),
+        ]
+    )
 
 
 def main(reactor):
@@ -55,5 +57,6 @@ def main(reactor):
     eff = main_effect()
     return perform(dispatcher, eff).addCallback(print)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     react(main, [])
