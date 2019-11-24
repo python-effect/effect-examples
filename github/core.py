@@ -16,7 +16,7 @@ import operator
 from effect import Effect, parallel
 
 from readline_intent import ReadLine
-from http.http_intent import HTTPRequest
+from ehttp.http_intent import HTTPRequest
 
 
 def get_orgs(name):

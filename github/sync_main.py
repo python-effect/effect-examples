@@ -1,6 +1,6 @@
 """
 Run this example with:
-    python -m examples.github.sync_main
+    python -m github.sync_main
 
 This is an example of using Effect in a normal program that uses
 synchronous/blocking functions to do I/O.
@@ -27,8 +27,8 @@ from effect import (
 from effect.threads import perform_parallel_with_pool
 
 
-from http.http_intent import HTTPRequest
-from http.sync_http import perform_request_requests
+from ehttp.http_intent import HTTPRequest
+from ehttp.sync_http import perform_request_requests
 from readline_intent import ReadLine, perform_readline_stdin
 
 from .core import main_effect

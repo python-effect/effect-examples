@@ -1,6 +1,6 @@
 """
 Run this example with:
-    python -m examples.github.twisted_main
+    python -m github.twisted_main
 
 This is an example of using Effect with Twisted.
 
@@ -14,7 +14,7 @@ This code has these responsibilities:
 - set up a dispatcher that knows how to find performers for all intents
   used in this application. The application uses ReadLine, HTTPRequest, and
   ParallelEffects.
-- use :func:`effect.twisted.perform` to perform an effect, which returns a
+- use :func:`texeffect.perform` to perform an effect, which returns a
   Deferred that we can return from our react function.
 """
 
@@ -22,13 +22,13 @@ from __future__ import print_function
 
 from twisted.internet.task import react
 
-from effect.twisted import make_twisted_dispatcher, perform
+from txeffect import make_twisted_dispatcher, perform
 from effect import (
     ComposedDispatcher,
     TypeDispatcher)
 
-from http.http_intent import HTTPRequest
-from http.twisted_http import perform_request_with_treq
+from ehttp.http_intent import HTTPRequest
+from ehttp.twisted_http import perform_request_with_treq
 from readline_intent import ReadLine, perform_readline_stdin
 
 from .core import main_effect

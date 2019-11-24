@@ -1,4 +1,4 @@
-from effect.twisted import deferred_performer
+from txeffect import deferred_performer
 
 import treq
 
